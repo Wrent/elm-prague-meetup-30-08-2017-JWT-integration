@@ -1,0 +1,23 @@
+<!--- This is the element, where the component will be embedded -->
+<div id="main"></div>
+
+
+<!--- The component compiled to Javascript goes here -->
+<script src="main.js"></script>
+<script>
+    //get the element where you want to embed the component
+    var node = document.getElementById('main');
+
+    // enter your JWT clientId
+    var APP_ID = "";
+
+    var app = Elm.CommonAuthenticationComponent.embed(node, {
+        //inject current time value to Elm
+        time: Date.now(),
+        //let the Elm know what is the current URL
+        appUrl: window.location.href,
+        //set the ClientId of this application
+        appId: APP_ID
+    });
+
+</script>
